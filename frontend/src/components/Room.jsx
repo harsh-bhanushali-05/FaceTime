@@ -6,6 +6,7 @@ import MeetingRoom from "./MeetingRoom";
 import WaitingRoom from "./WaitingRoom";
 function Room() {
     const socket = useSocket();
+    const [otherID, setOtherID] = useState();
     const [otherId, setOtherId] = useState(null);
     const [localStream, setlocalStream] = useState();
     const [remoteStream, setRemoteStream] = useState();
@@ -27,6 +28,7 @@ function Room() {
     const handleIncommingCall = useCallback(
         async ({ from, offer }) => {
             setOtherId(from);
+            setOtherID(from);
             const stream = await navigator.mediaDevices.getUserMedia({
                 audio: true,
                 video: true,
@@ -114,7 +116,7 @@ function Room() {
     }, [otherId]);
     return (
         <div>
-            <h4>{otherId ? <MeetingRoom localStream={localStream} remoteStream={remoteStream} /> : <WaitingRoom localStream={localStream} />}</h4>
+            <h4>{otherId ? <MeetingRoom socket={socket} localStream={localStream} user={socket.id} remoteStream={remoteStream} otherID={otherId} /> : <WaitingRoom localStream={localStream} />}</h4>
         </div>
     );
 };

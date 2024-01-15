@@ -3,7 +3,6 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { SocketPro } from "./util/SocketContext.jsx";
 import Room from './components/Room';
-import { useEffect, useState } from 'react';
 function App() {
   return (
     <SocketPro>

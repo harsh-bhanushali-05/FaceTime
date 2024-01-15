@@ -29,5 +29,10 @@ io.on('connection', (socket) => {
     socket.on('peer:nego:done', ({ to, ans }) => {
         io.to(to).emit('peer:nego:final', { from: socket.id, ans })
     })
-
+    socket.on('get_name', ({ to, from }) => {
+        const userName = socketIdToUserName.get(from);
+        const otheruser = socketIdToUserName.get(to);
+        console.log(socketIdToUserName.get(from) + "This is the data from the map  and this is the from  " + from);
+        io.to(to).emit('get_name', { userName, otheruser });
+    })
 })

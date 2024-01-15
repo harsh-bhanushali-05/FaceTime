@@ -1,3 +1,6 @@
+body{
+    color: #864AF9;
+}
 .login-cointainer{
     display: flex;
     align-items: center;
@@ -15,7 +18,8 @@
 .input-text{
     border-radius: 5px;
     padding: 10px;
-    border: solid 1px grey;
+    border: solid 1px #864AF9;
+    margin: 3%;
 }
 .input-text:focus,
 .input-text:active {
@@ -26,6 +30,9 @@
     border: solid 1px blue;
 }
 .input-text-field{
+    color: #F8E559;
+    font-size: 1.5rem;
+    background-color: #332941;
     min-width: 90%;
     min-height: 100%;
     border:none ;
@@ -45,7 +52,7 @@
     margin-top: 5%;
     justify-content: center;
 }.button-submit {
-    background-color: #007BFF;
+    background-color: #864AF9;
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -59,7 +66,7 @@
 }
 .video{
     max-width:600px;
-    border:  solid 3px black;
+    border:  solid 3px #3B3486;
     border-radius: 25px;
     margin: 5%;
 }

@@ -1,3 +1,14 @@
 .fluid{
     display: flex;
+    max-width: 90%;
+    justify-content: space-between;
+    align-items: center;
+}
+.Video-player-MeetingRoom{
+    margin: 10%;
+    margin-bottom: 0;
+}
+.title{
+    margin: 0;
+    color: #F8E559;
 }

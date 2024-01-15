@@ -15,7 +15,7 @@ function WaitingRoom(props) {
             <h1>Login to the FaceTime Clone</h1>
             <h2>Waiting for the second person to join!!!</h2>
             <center>
-                <i className="fa-solid fa-spinner fa-spin" style={{ color: "#0084ff", margin: "30px", fontSize: "3rem" }}></i>
+                <i className="fa-solid fa-spinner fa-spin" style={{ color: "#F8E559", margin: "30px", fontSize: "3rem" }}></i>
             </center>
         </div>
     </div>
