@@ -13,7 +13,7 @@ io.on('connection', (socket) => {
         io.to(roomID).emit("Join", { userName, id: socket.id });
         socket.join(roomID);
 
-        io.to(socket.id).emit("Join", data);
+        io.to(socket.id).emit("Join", { userName, roomID });
     })
     socket.on('Call-other-user', ({ to, offer }) => {
         // console.log(offer)
@@ -29,4 +29,5 @@ io.on('connection', (socket) => {
     socket.on('peer:nego:done', ({ to, ans }) => {
         io.to(to).emit('peer:nego:final', { from: socket.id, ans })
     })
+
 })

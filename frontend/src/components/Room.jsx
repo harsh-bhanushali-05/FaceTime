@@ -2,7 +2,8 @@ import { useCallback, useEffect, useState } from "react";
 import peer from "../RTC-services/peer";
 import { useSocket } from "../util/SocketContext";
 import ReactPlayer from 'react-player';
-
+import MeetingRoom from "./MeetingRoom";
+import WaitingRoom from "./WaitingRoom";
 function Room() {
     const socket = useSocket();
     const [otherId, setOtherId] = useState(null);
@@ -113,27 +114,7 @@ function Room() {
     }, [otherId]);
     return (
         <div>
-            <h1>Room Page</h1>
-            <h4>{otherId ? "Connected" : "No one in room"}</h4>
-            {localStream && (
-                <>
-                    <h1>My Stream</h1>
-                    <ReactPlayer
-                        playing
-                        muted
-                        url={localStream}
-                    />
-                </>
-            )}
-            {remoteStream && (
-                <>
-                    <h1>Remote Stream</h1>
-                    <ReactPlayer
-                        playing
-                        url={remoteStream}
-                    />
-                </>
-            )}
+            <h4>{otherId ? <MeetingRoom localStream={localStream} remoteStream={remoteStream} /> : <WaitingRoom localStream={localStream} />}</h4>
         </div>
     );
 };
